@@ -11,5 +11,7 @@ export class SignupPage implements OnInit {
 
   ngOnInit() {
   }
+  onSubmit(){
 
+  }
 }

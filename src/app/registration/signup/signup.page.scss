@@ -1,0 +1,47 @@
+#signup_page{
+    height: 100vh;
+    .wrapper{
+        .signup-wrapper{
+            width: 90%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            border-radius: 15px;
+            transform: translate(-50%, -50%);
+            background-color: #f0f0f0;
+            padding:0px 20px 20px  20px;
+            box-shadow: 0px 8px 18px 10px rgba(0, 0, 0, 0.15);
+        }
+        .sign-up-title{
+            display: flex;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 85.523%; /* 17.105px */
+            letter-spacing: 0.2px;
+        }
+        .signup-form{
+            margin-top: 15px;
+            .form-group ion-input {
+                margin-top: 8px;
+                margin-bottom: 15px;
+                // height: 20px !important;
+                min-height: 45px !important;
+                padding: 0 !important;
+
+            }
+
+            .submit-btn-wrapper{
+                display: flex;
+                justify-content: center;
+                margin-top: 15px;
+                ion-button{
+                    width: 50%;
+                    height: 42px;
+                    font-size: 16px;
+                    text-transform: none;
+                }
+            }
+        }
+    }
+}
