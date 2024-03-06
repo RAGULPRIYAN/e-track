@@ -53,6 +53,7 @@ export class DetailsPage implements OnInit {
   
   updateTodo() {  
     this.todoService.updateTodo(this.todo).then(() => {  
+      this.router.navigateByUrl('/list');  
       this.showToast('todo updated');  
     }, err => {  
       this.showToast('There was a some problem in updating your todo :(');  

@@ -1,13 +1,41 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>signup</ion-title>
-  </ion-toolbar>
-</ion-header>
+<!-- <ion-item lines="none">
+	<ion-input type="number" placeholder="Phone" [(ngModel)]="user.user_phone"></ion-input>
+	<span class="country-code">+91</span>
+</ion-item>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">signup</ion-title>
-    </ion-toolbar>
-  </ion-header>
-</ion-content>
+<div id="sign-in-button"></div>
+
+<ion-button class="btn" (click)="signinWithPhoneNumber($event)">Request OTP</ion-button> -->
+<ion-content class="ion-no-padding">
+  <div id="sign-in-button"></div>
+
+  <div class="main">
+    <ion-card no-margin>
+      <ion-card-content>
+       
+        <ion-grid class="phoneAuthGrid">
+          <ion-row>
+            <ion-col size="4">
+              <ion-select class="phoneCountry" value="brown" okText="Okay" cancelText="Dismiss"
+                (ionChange)="countryCodeChange($event)" [value]="CountryCode">
+                <ion-select-option *ngFor="let country of CountryJson" value={{country.dial_code}}>
+                  {{country.dial_code + ' ' + country.name}}</ion-select-option>
+              </ion-select>
+            </ion-col>
+            <ion-col size="8">
+              <ion-input clearInput type="test" placeholder="Your Contact Number" [(ngModel)]="PhoneNo"
+                class="input ion-padding-horizontal" clear-input="true"></ion-input>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-button expand="block" (click)="signinWithPhoneNumber($event)" color="undefined"
+                class="btn-transition">
+                Sign in with Phone number</ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+      </ion-card-content>
+    </ion-card>
+  </div>
