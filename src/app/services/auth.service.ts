@@ -7,7 +7,7 @@ import firebase from 'firebase/compat';
 })
 export class AuthService {
 
-  public confirmationResult?: firebase.auth.ConfirmationResult;
+ 	public confirmationResult?: firebase.auth.ConfirmationResult;
 
 	constructor(private fireAuth: AngularFireAuth) {}
 
