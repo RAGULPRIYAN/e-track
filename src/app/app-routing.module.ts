@@ -8,19 +8,28 @@ const routes: Routes = [
   // },
   {
     path: '',
+    loadChildren: () => import('./registration/login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'list',
     loadChildren: () => import('./pages/list/list.module').then( m => m.ListPageModule)
   },
   {
     path: 'details',
     loadChildren: () => import('./pages/details/details.module').then( m => m.DetailsPageModule)
   },
-  {
-    path: 'login',
-    loadChildren: () => import('./registration/login/login.module').then( m => m.LoginPageModule)
-  },
+ 
   {
     path: 'signup',
     loadChildren: () => import('./registration/signup/signup.module').then( m => m.SignupPageModule)
+  },
+  {
+    path: 'set-amount',
+    loadChildren: () => import('./set-amount/set-amount.module').then( m => m.SetAmountPageModule)
+  },
+  {
+    path: 'expense-list',
+    loadChildren: () => import('./expense/expense-list/expense-list.module').then( m => m.ExpenseListPageModule)
   },
   
 ];

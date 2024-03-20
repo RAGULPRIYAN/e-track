@@ -1,0 +1,154 @@
+ion-modal#example-modal {
+  --width: fit-content;
+  --min-width: 250px;
+  --height: fit-content;
+  --border-radius: 6px;
+  // --box-shadow: 0 28px 48px rgba(0, 0, 0, 0.4);
+}
+
+ion-modal#example-modal h1 {
+  margin: 20px 20px 10px 20px;
+  color: white;
+}
+
+ion-modal#example-modal ion-icon {
+  margin-right: 6px;
+  width: 55px;
+  height: 55px;
+  padding: 4px 0;
+  color: #aaaaaa;
+}
+  
+  ion-modal#example-modal .wrapper {
+    margin-bottom: 10px;
+    background-color: #29a3ca;
+    .amount-input{
+      margin: 10px;
+      border: 1px solid #aaaaaa;
+      // margin-bottom: 10px;
+
+    }
+    .btn-div{
+      // margin-top: 10px;
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      background-color: white;
+      // border: 1px solid #aaaaaa;
+      .submit-btn{
+                        background-color: #29a3ca !important;
+                        color: white;
+                        padding: 10px;
+                        border-radius:10px;
+                         margin-top: 10px;
+            
+                    }
+                    .cancel-btn{
+                        background-color: gainsboro;
+                        color: black;
+                        padding: 10px;
+                        border-radius:10px;
+                         margin-top: 10px;
+                    }
+    }
+
+  }
+
+  .btn-div{
+    // margin-top: 10px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    background-color: white;
+    // border: 1px solid #aaaaaa;
+    .submit-btn{
+                      background-color: #29a3ca !important;
+                      color: white;
+                      padding: 10px;
+                      border-radius:10px;
+                       margin-top: 10px;
+          
+                  }
+                  .cancel-btn{
+                      background-color: gainsboro;
+                      color: black;
+                      padding: 10px;
+                      border-radius:10px;
+                       margin-top: 10px;
+                  }
+  }
+// .body-div{
+//     background: linear-gradient(137.84deg, #0072D9 29.06%, #005BAD 92.84%);
+    
+//     .wrapper{
+//         margin: 10px;
+//         // background-color: aquamarine;
+//         .amount-input{
+//             margin-top: 20px;
+//             .input{
+              
+//                 border: 1px solid gray;
+//                 background: white;
+//             }
+//         }
+//         .btn-div{
+//             display: flex;
+//             justify-content: end;
+//             gap: 10px;
+//             margin-top: 20px;
+//            .submit-btn{
+//                 background-color: blue;
+//                 color: white;
+//                 padding: 10px;
+//                 border-radius:10px;
+    
+//             }
+//             .cancel-btn{
+//                 background-color: gainsboro;
+//                 color: black;
+//                 padding: 10px;
+//                 border-radius:10px;
+//             }
+//         }
+//       }
+// }
+
+.body-div{
+
+  height: 100vh;
+  .card-div{
+    ion-modal #example-modal{
+     .wrapper{
+      background-color: rebeccapurple;
+     }
+    }
+   
+   
+  }
+  .form-div{
+    // background-color: #29a3ca;
+    margin: 10px;
+    padding: 10px;
+    .btn-div{
+      // margin-top: 10px;
+      display: flex;
+      gap: 10px;
+      justify-content: end;
+      background-color: white;
+      // border: 1px solid #aaaaaa;
+      .submit-btn{
+                        background-color: #29a3ca !important;
+                        color: white;
+                        padding: 10px;
+                        border-radius:10px;
+                         margin-top: 10px;
+            
+                    }
+                   
+    }
+    
+  }
+  
+}
+
+  

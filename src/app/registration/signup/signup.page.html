@@ -7,6 +7,23 @@
 
 <ion-button class="btn" (click)="signinWithPhoneNumber($event)">Request OTP</ion-button> -->
 <ion-content class="ion-no-padding">
+  <div class="img-wrapper">
+    <img src="../../../assets/icon/mt.webp" alt="header" sizes="" srcset="" />
+  </div>
+ 
+  <ion-list class="login-form">
+    <ion-item>
+      <ion-input label="UserName" [(ngModel)]="email" labelPlacement="floating" placeholder="Enter text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Password" [(ngModel)]="password" labelPlacement="floating" placeholder="Enter text"></ion-input>
+    </ion-item>
+
+   <ion-button  class="login-btn" shape="round" (click)="signinWithEmail()">SignUp</ion-button>
+
+
+   
+  </ion-list>
   <div id="sign-in-button"></div>
 
   <div class="main">
@@ -31,7 +48,7 @@
             <ion-col>
               <ion-button expand="block" (click)="signinWithPhoneNumber($event)" color="undefined"
                 class="btn-transition">
-                Sign in with Phone number</ion-button>
+                Sign in </ion-button>
             </ion-col>
           </ion-row>
         </ion-grid>
@@ -39,3 +56,5 @@
       </ion-card-content>
     </ion-card>
   </div>
+
+ 

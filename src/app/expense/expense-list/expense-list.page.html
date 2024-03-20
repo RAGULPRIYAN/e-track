@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>My List</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+    <div class="bar-div">
+      <div class="dropdown">
+        <ion-item>
+          <ion-select aria-label="Fruit" interface="popover" placeholder="Filter Amount" [(ngModel)]="todo.fixAmountId"
+            (ionChange)="filterAmount($event)">
+            <ion-select-option *ngFor="let e of (amount | async)" [value]="e.id">{{ e.setAmount
+              }}</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </div>
+      <div class="clear-div">
+        <span (click)="removeFilter()">Clear</span>
+      </div>
+
+    </div>
+
+
+
+  </ion-list>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button routerLink="/set-amount">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-card button *ngFor="let todo of ( expense | async)">
+    <div class="fix-amount" *ngFor="let amo of ( amount | async)">
+      <div *ngIf="todo.fixAmountId == amo.id">
+        <h1>Fix Amount : ${{amo.setAmount}}</h1>
+      </div>
+    </div>
+    <ion-card-header>
+      <ion-card-title>{{todo.expenseName}}</ion-card-title>
+      <ion-card-subtitle>Expense Amount : ${{todo.expenseAmount}}</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-button fill="clear" (click)="goToEdit(todo.id)">Edit</ion-button>
+    <ion-button fill="clear">Delete</ion-button>
+  </ion-card>
+
+
+</ion-content>

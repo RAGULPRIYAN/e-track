@@ -1,0 +1,29 @@
+.fix-amount {
+    color: green;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    h1 {
+        font-size: large;
+        font-weight: 600;
+    }
+}
+
+.bar-div {
+    // background-color: aquamarine;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+
+    .dropdown {
+        border: 1px solid white;
+    }
+
+    .clear-div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: blue;
+    }
+}

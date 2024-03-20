@@ -21,7 +21,9 @@ export class SignupPage implements OnInit {
   OTPmessage: string = 'An OTP is sent to your number. You should receive it in 15 s'
   public recaptchaVerifier?: firebase.auth.RecaptchaVerifier;
   confirmationResult: any;
-
+  email!: string;
+  password!: string;
+   
   constructor(
     private alertController: AlertController,
     private authService: AuthService,
@@ -197,6 +199,11 @@ export class SignupPage implements OnInit {
 	// 	});
 	// 	await alert.present();
 	// }
+
+
+  signinWithEmail(){
+this.authService.SignUp(this.email,this.password)
+  }
 
  
 }

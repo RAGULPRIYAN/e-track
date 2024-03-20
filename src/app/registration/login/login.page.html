@@ -36,6 +36,27 @@
       <h6>Don't have an account?</h6>
     </ion-label>
   </div>
+  <div class="account-label">
+   
+      <ion-button  class="login-btn" shape="round" (click)="googleSignUp()">Sign in Google</ion-button>
+   
+  </div>
+  <div class="account-label">
+   
+    <ion-button  class="login-btn" shape="round" (click)="fbSignUp()">Facebook</ion-button>
+ 
+</div>
+
+  <ion-card *ngIf="user">
+    <ion-img [src]="user.photoURL"></ion-img>
+    <ion-card-header>
+      <ion-card-subtitle>{{user.email}}</ion-card-subtitle>
+      <ion-card-title>{{user.displayName}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-button (click)="logout()" expand="block" color="danger">Logout</ion-button>
+    </ion-card-content>
+  </ion-card>
 
 
    

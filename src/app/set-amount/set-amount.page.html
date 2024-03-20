@@ -1,0 +1,143 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Set Amount</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <div class="body-div">
+    <div class="card-div">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Fix Amount</ion-card-title>
+
+        </ion-card-header>
+        <ion-card-content>
+          <ion-list>
+            <ion-item>
+              <ion-select aria-label="Fruit" interface="action-sheet" placeholder="Select Amount" [(ngModel)]="todo.fixAmountId" (ionChange)="setRemainingAmount($event)">
+                <ion-select-option   *ngFor="let e of (amount | async)" [value]="e.id">{{ e.setAmount
+                  }}</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <div class="btn-div">
+              <button id="open-custom-dialog" class="submit-btn">Add New Amount</button>
+            </div>
+            <!-- <button id="open-custom-dialog" class="submit-btn" >Add New Amount</button> -->
+            <!-- <ion-button id="open-custom-dialog" expand="block">Add New Amount</ion-button> -->
+            <ion-modal id="example-modal" #modal trigger="open-custom-dialog">
+              <ng-template>
+                <div class="wrapper">
+                  <h1>Add Fix Amount</h1>
+                  <div class="amount-input">
+                    <ion-item>
+                      <ion-input [(ngModel)]="amounts" label="Enter Amount" label-placement="floating" fill="outline"
+                        placeholder="Enter text"></ion-input>
+                      <!-- <ion-input label="Enter Amount" labelPlacement="floating" ></ion-input> -->
+                    </ion-item>
+                  </div>
+                  <div class="btn-div">
+                    <button class="submit-btn" (click)="addAmount()">Add New</button>
+                    <button class="cancel-btn" (click)="modal.dismiss()">Cancel</button>
+                  </div>
+
+                </div>
+              </ng-template>
+            </ion-modal>
+
+          </ion-list>
+
+        </ion-card-content>
+      </ion-card>
+
+    </div>
+    <div class="card-div2">
+      <ion-card>
+        <ion-card-header >
+          <ion-card-title>Remaining Amount</ion-card-title>
+
+        </ion-card-header>
+
+        <ion-card-content>
+          <h1 style="text-align: center;">${{remainingAmount}}</h1>
+
+        </ion-card-content>
+      </ion-card>
+    </div>
+    <div class="form-div">
+      <ion-item>
+        <ion-input [(ngModel)]="todo.expenseAmount" label="Enter Expense Amount" label-placement="floating" fill="outline"
+          placeholder="Enter text"></ion-input>
+
+      </ion-item>
+      <ion-item>
+        <ion-input [(ngModel)]="todo.expenseName" label="Enter Expense Name" label-placement="floating" fill="outline"
+          placeholder="Enter text"></ion-input>
+
+      </ion-item>
+
+      <div class="btn-div" *ngIf="!todo.id">
+        <button class="submit-btn" (click)="createExpense()">Submit</button>
+
+      </div>
+
+
+      <div class="btn-div" *ngIf="todo.id">
+        <button class="submit-btn" (click)="updateExpense()">Update</button>
+        <button class="cancel-btn" (click)="cancelExpense()">Cancel</button>
+      </div>
+    </div>
+
+  </div>
+</ion-content>
+<ion-footer [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Footer</ion-title>
+  </ion-toolbar>
+</ion-footer>
+
+<!-- <ion-content [fullscreen]="true">  
+  <div class="body-div">
+    <div class="card-contain">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Fix Amount</ion-card-title>
+         
+        </ion-card-header>
+        <ion-card-content>
+          <ion-list>
+            <ion-item>
+              <ion-select aria-label="Fruit" interface="action-sheet" placeholder="Select Amount">
+                <ion-select-option value="apples">4000</ion-select-option>
+                <ion-select-option value="oranges">5000</ion-select-option>
+                <ion-select-option value="bananas">6000</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-button id="open-custom-dialog" expand="block">Add New Amount</ion-button>
+            <ion-modal id="example-modal" #modal trigger="open-custom-dialog">
+              <ng-template>
+                <div class="wrapper">
+                  <h1>Add Fix Amount</h1>
+                  <div class="amount-input">
+                    <ion-item>
+                      <ion-input label="Enter Amount" labelPlacement="floating" ></ion-input>
+                    </ion-item>
+                  </div>
+                  <div class="btn-div">
+                    <button class="submit-btn">Add New</button>
+                    <button class="cancel-btn"  (click)="modal.dismiss()">Cancel</button>
+                  </div>
+         
+                </div>
+              </ng-template>
+            </ion-modal>
+            
+          </ion-list>
+         
+        </ion-card-content>
+      </ion-card>
+
+    </div>
+    
+  </div>
+
+</ion-content>   -->

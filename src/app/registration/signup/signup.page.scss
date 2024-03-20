@@ -204,3 +204,49 @@
   .rtl table tr td:nth-child(2) {
     text-align: left;
   }
+
+
+  .ion-background{
+  
+    .login-form{
+        display: flex;
+        margin: 20px;
+        // align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        .check-remember{
+            display: flex;
+            gap: 10px;
+            margin: 15px 20px 15px 20px;
+            align-items: end;
+            flex-direction: row;
+            // justify-content: start;
+        }
+        ion-checkbox {
+            --size: 18px;
+            --checkbox-background-checked: #6815ec;
+          }
+          
+          ion-checkbox::part(container) {
+            border-radius: 6px;
+            border: 2px solid #6815ec;
+          }
+        .login-btn{
+           display: flex;
+           align-items: center;
+           justify-self: center;
+        }
+        .forgot-label{
+            margin-top: 15px;
+            color: blue;
+            display: flex;
+            justify-content: end;
+        }
+        .account-label{
+            margin-top: 15px;
+            color: black;
+            display: flex;
+            justify-content: center;
+        }
+    }
+}

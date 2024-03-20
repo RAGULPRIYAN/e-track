@@ -9,6 +9,8 @@ import {  AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { environment } from 'src/environments/environment';  
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 
+// import { GooglePlus } from '@ionic-native/google-plus/ngx';
+
 
 @NgModule({
   declarations: [AppComponent],
