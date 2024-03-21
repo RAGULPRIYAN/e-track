@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar >
     <ion-title>Set Amount</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -7,10 +7,10 @@
   <div class="body-div">
     <div class="card-div">
       <ion-card>
-        <ion-card-header>
-          <ion-card-title>Fix Amount</ion-card-title>
-
-        </ion-card-header>
+        <div class="card-header">
+          <h2>Fix Amount</h2>
+        
+        </div>
         <ion-card-content>
           <ion-list>
             <ion-item>
@@ -52,15 +52,23 @@
     </div>
     <div class="card-div2">
       <ion-card>
-        <ion-card-header >
+        <div class="card-header">
+          <h2>Remaining Amount</h2>
+        
+        </div>
+        <!-- <ion-card-header >
           <ion-card-title>Remaining Amount</ion-card-title>
 
-        </ion-card-header>
+        </ion-card-header> -->
 
-        <ion-card-content>
+        <!-- <ion-card-content>
           <h1 style="text-align: center;">${{remainingAmount}}</h1>
 
-        </ion-card-content>
+        </ion-card-content> -->
+        <div class="card-header1">
+          <h2>${{remainingAmount}}</h2>
+        
+        </div>
       </ion-card>
     </div>
     <div class="form-div">
@@ -89,11 +97,11 @@
 
   </div>
 </ion-content>
-<ion-footer [translucent]="true">
+<!-- <ion-footer [translucent]="true">
   <ion-toolbar>
     <ion-title>Footer</ion-title>
   </ion-toolbar>
-</ion-footer>
+</ion-footer> -->
 
 <!-- <ion-content [fullscreen]="true">  
   <div class="body-div">

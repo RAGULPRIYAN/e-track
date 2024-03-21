@@ -23,13 +23,17 @@ const routes: Routes = [
     path: 'signup',
     loadChildren: () => import('./registration/signup/signup.module').then( m => m.SignupPageModule)
   },
+  // {
+  //   path: 'set-amount',
+  //   loadChildren: () => import('./set-amount/set-amount.module').then( m => m.SetAmountPageModule)
+  // },
+  // {
+  //   path: 'expense-list',
+  //   loadChildren: () => import('./expense/expense-list/expense-list.module').then( m => m.ExpenseListPageModule)
+  // },
   {
-    path: 'set-amount',
-    loadChildren: () => import('./set-amount/set-amount.module').then( m => m.SetAmountPageModule)
-  },
-  {
-    path: 'expense-list',
-    loadChildren: () => import('./expense/expense-list/expense-list.module').then( m => m.ExpenseListPageModule)
+    path: 'home',
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
   
 ];

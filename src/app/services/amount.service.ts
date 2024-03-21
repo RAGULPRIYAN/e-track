@@ -4,7 +4,8 @@ import {from, Observable } from 'rxjs';
 import { catchError, map, take } from 'rxjs/operators';  
 export interface Amount {  
   id?:string;
-  setAmount: string;  
+  setAmount: string; 
+  timestamp :Date
 } 
 
 export interface Expense {  
@@ -12,6 +13,7 @@ export interface Expense {
   expenseAmount: string; 
   expenseName:string;
   fixAmountId:string; 
+  timestamp :Date
 } 
 @Injectable({
   providedIn: 'root'
@@ -39,9 +41,9 @@ export class AmountService {
       map(actions => {  
         return actions.map(a => {  
           const data = a.payload.doc.data();  
-          console.log(data,'data 4444444444444')
-          const id = a.payload.doc.id;  
         
+          const id = a.payload.doc.id;  
+          // const date = a.payload.doc
           return { id, ...data };  
         });  
       })    
@@ -74,6 +76,7 @@ export class AmountService {
   }
 
   createExpense(data:any){
+  
     return this.expenseCollection.add(data)
   }
 
@@ -85,13 +88,10 @@ export class AmountService {
     return this.expenseCollection.doc<Expense>(id).valueChanges().pipe(  
       take(1),  
       map(todo => {  
-      
         if (todo) {
-         
           todo.id = id;  
           return todo;
         } else {
-          
           // Handle the case where todo is undefined (e.g., return a default value or throw an error)
           return null; // Or any other appropriate handling
         }  
@@ -116,9 +116,10 @@ export class AmountService {
     );
   }
   updateExpense(todo: Expense): Promise<void> {  
-    return this.expenseCollection.doc(todo.id).update({ expenseAmount: todo.expenseAmount, expenseName: todo.expenseName,fixAmountId:todo.fixAmountId });  
+    
+    return this.expenseCollection.doc(todo.id).update({ expenseAmount: todo.expenseAmount, expenseName: todo.expenseName,fixAmountId:todo.fixAmountId,timestamp:new Date() });  
   }  
     
-
+ 
 
 }

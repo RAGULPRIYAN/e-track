@@ -16,7 +16,8 @@ export class SetAmountPage implements OnInit {
   todo: Expense = {
     expenseAmount: '',
     expenseName: '',
-    fixAmountId: ''
+    fixAmountId: '',
+    timestamp: new Date()
   };
   public amount: Observable<Amount[]> | any;
   amounts: any
@@ -25,20 +26,20 @@ export class SetAmountPage implements OnInit {
   amountValue: Observable<any[]> | any
   fixAmountId: any
   todos: any;
-  remainingAmount:any
+  remainingAmount:number=0
   constructor(private activeRoute: ActivatedRoute, private amountService: AmountService, private route: Router, private modalController: ModalController) { }
 
   ngOnInit() {
     this.amount = this.amountService.getSetAmount()
-    console.log(this.amount, 'checks')
+  
 
     const id: any = this.activeRoute.snapshot.queryParams["id"];;
-    console.log(id, 'id checks')
+  
     if (id) {
-      console.log(id, 'inside if checks')
+     
       this.amountService.getExpenseId(id).subscribe(todo => {
         this.todo = todo!;
-        console.log(this.todo, ' this.todo')
+       
       });
     }
   }
@@ -65,7 +66,7 @@ export class SetAmountPage implements OnInit {
     // }
     // console.log(payload,'payload checks')
     this.amountService.createExpense(this.todo).then(() => {
-      this.route.navigate(['/expense-list'])
+      this.route.navigate(['home/expense-list'])
     },
       err => {
 
@@ -74,7 +75,7 @@ export class SetAmountPage implements OnInit {
 
   updateExpense() {
     this.amountService.updateExpense(this.todo).then(() => {
-      this.route.navigateByUrl('/expense-list');
+      this.route.navigateByUrl('home/expense-list');
 
     }, err => {
 
@@ -82,13 +83,10 @@ export class SetAmountPage implements OnInit {
   }
 
   cancelExpense() {
-    this.route.navigate(['/expense-list'])
+    this.route.navigate(['home/expense-list'])
   }
 
-//   remainingAmount(amount:any) {
-// let fixAmount = amount;
-// // console.log(fixAmount,'amount checks')
-//   }
+
 
 setRemainingAmount(event: any) {
   const selectedValue = event.detail.value;
@@ -96,21 +94,19 @@ setRemainingAmount(event: any) {
   // Fetch fixAmount
   this.amountService.getSetAmountId(selectedValue).subscribe(todo => {
     const fixAmount:any = todo?.setAmount;
-    console.log(fixAmount, 'fixAmount checks');
+  
 
     // Fetch totalExpenseAmount
     this.amountService.getExpenseByFixAmountId(selectedValue).subscribe((expenses: Expense[]) => {
       this.todos = expenses;
-      console.log(this.todos, 'expenses checks');
-
+     
       const totalExpenseAmount = this.todos.reduce((total: number, e: { expenseAmount: string; }) => total + parseFloat(e.expenseAmount), 0);
       console.log(totalExpenseAmount, 'total expense amount');
 
       // Calculate remainingAmount
     this.remainingAmount = parseFloat(fixAmount) - totalExpenseAmount;
-      console.log(this.remainingAmount, 'remaining amount');
-      
-      // Use remainingAmount as needed in your application
+ 
+   
     });
   });
 

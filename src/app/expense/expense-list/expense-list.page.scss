@@ -1,5 +1,13 @@
+ion-fab-button {
+    --background: #29a3ca;
+    --background-activated: #29a3ca;
+    --background-hover: #29a3ca;
+    // --border-radius: 15px;
+    --box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+    --color: white;
+  }
 .fix-amount {
-    color: green;
+    color: #29a3ca;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -9,7 +17,37 @@
         font-weight: 600;
     }
 }
+.card-header{
+    text-align: center;
+h2{
+    font-size: large;
+    font-weight: 600;
+}
+h4{
+    font-size: medium;
+    font-weight: 600;
+}
+}
 
+
+.footer-div{
+    display: flex;
+    justify-content: space-around;
+    .btn-div{}
+    .date-format{
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        span{
+            background-color: #29a3ca;
+            padding: 10px;
+            border-radius: 10px;
+            color: white;
+        }
+        
+    }
+
+}
 .bar-div {
     // background-color: aquamarine;
     padding: 10px;

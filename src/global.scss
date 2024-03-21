@@ -29,3 +29,16 @@
 body {
     --background-color: #29a3ca !important;
   }
+
+  ion-toolbar {
+    --background: #29a3ca;
+    --color: white;
+  
+  
+    --border-width: 4px 0;
+    --border-style: double;
+  
+    --min-height: 60px;
+    --padding-top: 20px;
+    --padding-bottom: 20px;
+  }

@@ -54,6 +54,32 @@ ion-modal#example-modal ion-icon {
 
   }
 
+  .card-header{
+    text-align: center;
+    color: #29a3ca;
+h2{
+    font-size: large;
+    font-weight: 600;
+}
+h4{
+    font-size: medium;
+    font-weight: 600;
+}
+  }
+
+  .card-header1{
+    text-align: center;
+    color: #aaaaaa;
+h2{
+    font-size: large;
+    font-weight: 600;
+}
+h4{
+    font-size: medium;
+    font-weight: 600;
+}
+  }
+
   .btn-div{
     // margin-top: 10px;
     display: flex;

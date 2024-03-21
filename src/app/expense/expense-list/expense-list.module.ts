@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
@@ -13,8 +13,9 @@ import { ExpenseListPage } from './expense-list.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    ExpenseListPageRoutingModule
+    ExpenseListPageRoutingModule,DatePipe
   ],
-  declarations: [ExpenseListPage]
+  declarations: [ExpenseListPage],
+  providers: [DatePipe],
 })
 export class ExpenseListPageModule {}
