@@ -210,7 +210,7 @@
   
     .login-form{
         display: flex;
-        margin: 20px;
+        margin: 50px;
         // align-items: center;
         flex-direction: column;
         justify-content: center;
@@ -249,4 +249,23 @@
             justify-content: center;
         }
     }
+}
+
+
+
+.login-form{
+  margin: 50px;
+  .login-btn{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+  }
+  .account-label{
+    margin-top: 10px;
+    text-align: center;
+    .login-act{
+      color: blue;
+      margin-left: 10px;
+    }
+  }
 }

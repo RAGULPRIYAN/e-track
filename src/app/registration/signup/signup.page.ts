@@ -23,6 +23,7 @@ export class SignupPage implements OnInit {
   confirmationResult: any;
   email!: string;
   password!: string;
+  name:any;
    
   constructor(
     private alertController: AlertController,

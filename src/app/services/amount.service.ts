@@ -27,7 +27,10 @@ export class AmountService {
 
   constructor(private db: AngularFirestore) {
     this.todoCollection = this.db.collection<Amount>('amount');
-    this.expenseCollection = this.db.collection<Expense>('expense');
+    // this.expenseCollection = this.db.collection<Expense>('expense');
+    this.expenseCollection = this.db.collection<Expense>('expense', ref =>
+    ref.orderBy('timestamp', 'desc') // Order by timestamp in descending order (latest first)
+  );
     this.amount = this.todoCollection.snapshotChanges().pipe(  
       map(actions => {  
         return actions.map(a => {  

@@ -32,11 +32,10 @@ export class SetAmountPage implements OnInit {
   ngOnInit() {
     this.amount = this.amountService.getSetAmount()
   
-
     const id: any = this.activeRoute.snapshot.queryParams["id"];;
-  
+  console.log(id,"id ###")
     if (id) {
-     
+ 
       this.amountService.getExpenseId(id).subscribe(todo => {
         this.todo = todo!;
        
@@ -56,6 +55,8 @@ export class SetAmountPage implements OnInit {
       // this.showToast('There was a some problem in adding your todo :(');  
     });
   }
+
+  
 
   createExpense() {
     // let payload={
@@ -105,6 +106,7 @@ setRemainingAmount(event: any) {
 
       // Calculate remainingAmount
     this.remainingAmount = parseFloat(fixAmount) - totalExpenseAmount;
+    // console.log(this.remainingAmount,'remaining amount')
  
    
     });
